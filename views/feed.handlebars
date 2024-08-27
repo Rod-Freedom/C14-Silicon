@@ -1,0 +1,16 @@
+<div id="new-post-prompt" style="display: none;">
+    <h1>Let your idea flow...</h1>
+    <input id="post-title" name="title" type="text" placeholder="Your post title">
+    <textarea id="post-content" name="body" type="text" maxlength="500" rows="3" placeholder="Drop your bits..."></textarea>
+    <button id="btn-post"><i class="fa-solid fa-turn-down-left"></i></button>
+</div>
+
+{{#if noposts}}
+<h1 id="no-posts">There are no posts yet.<br>Be the first one!</h1>
+{{else}}
+<div id="post-area">
+{{#each posts as | post |}}
+    {{> post-div}}
+{{/each}}
+</div>
+{{/if}}

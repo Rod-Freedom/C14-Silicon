@@ -1,0 +1,45 @@
+#login-div, #signup-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-input, #signup-input {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-input input, #signup-input input  {
+    margin: 2rem 1rem 0;
+    background-color: rgb(197, 197, 197);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+}
+
+.log-title {
+    text-align: center;
+    cursor: pointer;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.btn-log {
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+
+.btn-log:hover { scale: 1.1; }
+.btn-log:active { scale: .95; }
+
+#separator {
+    border-top: solid 2px rgb(139, 139, 139);
+    width: 400px;
+    margin: 2rem;
+}
