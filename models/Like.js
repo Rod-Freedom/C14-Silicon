@@ -1,9 +1,9 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/connection.js";
 
-class Post extends Model {}
+class Like extends Model {}
 
-Post.init(
+Like.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,16 +11,17 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
+        post_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-        },
-        body: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id',
+            },
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
@@ -29,11 +30,11 @@ Post.init(
     },
     {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post',
+        modelName: 'like',
     }
 )
 
-export default Post;
+export default Like;

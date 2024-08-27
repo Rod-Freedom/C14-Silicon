@@ -1,0 +1,15 @@
+<div class="post-box" data-post="{{id}}">
+    <h2>{{title}}</h2>
+    <p class="content">{{body}}</p>
+    <div class="stats">
+        <div class="likes">
+            <p data-likes="{{like_count}}" class="like-count">{{binaryLikes like_count}}</p>
+            <i data-post-like="{{id}}" data-liked="{{#if liked}}true{{else}}false{{/if}}" class="{{#if liked}}liked {{/if}}btn-like fa-sharp fa-solid fa-plus"></i>
+        </div>
+
+        <div class="info">
+            <h4>{{formatUser user}}&nbsp;</h4>
+            <h5>{{formatDate createdAt}}</h5>
+        </div>
+    </div>
+</div>

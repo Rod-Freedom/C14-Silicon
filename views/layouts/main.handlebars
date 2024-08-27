@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Let your ideas flow like bits through silicon.">
+        <link rel="shortcut icon" href="/assets/Silicon_Logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/feed.css">
+        <script src="https://kit.fontawesome.com/6df7fc2545.js" crossorigin="anonymous"></script>
+        <script defer type="module" src="/js/login.js"></script>
+        <script defer type="module" src="/js/logic.js"></script>
+        <script defer type="module" src="/js/feed.js"></script>
+        <title>Silicon | A tech-blog with high-performance ideas</title>
+    </head>
+
+    <body>
+        {{#if logged_in}}
+        <div id="new-post">
+            <i id="new-post-icon" class="fa-solid fa-terminal"></i>
+        </div>
+        {{/if}}
+        
+        <div id="err-prompt" style="display: none;">
+            <h2 id="err-msg"></h2>
+        </div>
+
+        <header id="main-header">
+            <div id="title-div">
+                <a href="/"><h1 id="brand-title">Silicon</h1></a>
+            </div>
+            
+            <div id="logo-div">
+                <img id="logo" src="/assets/Silicon_Logo.png" alt="Silicon Logo">
+            </div>
+            
+            <div id="logout-div">
+                {{#if logged_in}}
+                <button id="btn-logout"><i id="logout-icon" class="fa-solid fa-right-from-bracket"></i></button>
+                {{/if}}
+            </div>
+        </header>
+
+        <main>
+            {{{ body }}}
+        </main>
+
+        <footer>
+            <h4>Made by <a id="dev-link" href="https://github.com/Rod-Freedom" target="_blank">Rod-Freedom</a></h4>
+        </footer>
+    </body>
+</html>
