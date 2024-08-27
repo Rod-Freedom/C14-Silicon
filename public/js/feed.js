@@ -2,6 +2,7 @@ import { promptErr } from "./utils/errorMsg.js";
 import { Meths } from "./utils/dataObjs.js";
 
 const btnNewPost = document.querySelector('#new-post');
+const newPostPrompt = document.querySelector('#new-post-prompt');
 
 const sendLike = async (body) => {
     const route = '/api/likes';
@@ -52,8 +53,7 @@ const likeFunc = async (e) => {
         likeCountEl.dataset.likes = likeCount;
         
     } catch (err) {
-        console.log('error catched')
-        console.log(err)
+        console.log(err);
     }
 
 }
@@ -85,11 +85,11 @@ const validateFunc = async () => {
     if (body === '') return promptErr('You forgot\nto write something...')
 
     postFunc({title, body});
+    newPostPrompt.style.display = 'none';
 };
 
 const closeNewPostPrompt = (e) => {
     const { target } = e;
-    const newPostPrompt = document.querySelector('#new-post-prompt');
 
     if (!newPostPrompt.contains(target)) {
         newPostPrompt.style.display = 'none';
@@ -99,8 +99,6 @@ const closeNewPostPrompt = (e) => {
 };
 
 const openNewPostPrompt = () => {
-    const newPostPrompt = document.querySelector('#new-post-prompt');
-
     newPostPrompt.style.removeProperty('display');
     newPostPrompt.style.display = 'flex';
     btnNewPost.removeEventListener('click', openNewPostPrompt);
